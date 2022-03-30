@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+nav ul {
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    display: flex;
+    padding-right: 5em;
+    justify-content: space-around;
+}
+
+main li {
+    list-style-type: none;
+}
+
+main li {
+    margin-bottom: 20px;
+}
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+    width: 30%;
+    cursor: pointer;
+}
+
+details:hover {
+    background-color: rgb(215, 215, 215);
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+main li::before {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+main li:nth-child(1)::before {
+    content: 'unknown';
+}
+
+main li:nth-child(2)::before {
+    content: '2013\2013 2017';
+}
+
+main li:nth-child(3)::before {
+    content: '2018\2013 2021';
+}
+
+main li:nth-child(4)::before {
+    content: '2021\2013 2022';
+}
+
+main li:nth-child(5)::before {
+    content: '2022';
+}
