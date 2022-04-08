@@ -1,12 +1,12 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;600&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;700&display=swap'); */
 
 :root {
-    --text: hsl(207, 8%, 21%);
+    --text: hsla(0, 1%, 20%, 1);
     --pink: hsl(342, 100%, 84%);
     --green: hsl(59, 55%, 30%);
-    --light-green: hsl(69, 25%, 85%);
+    --light-green: hsla(69, 25%, 85%, 1);
+    --orange: hsla(14, 77%, 54%, 1);
 }
 
 * {
@@ -15,8 +15,8 @@
 }
 
 body {
-    font-family: 'Readex Pro', sans-serif;
-    background-color: hsl(69, 25%, 85%);
+    font-family: 'Familjen Grotesk', sans-serif;
+    background-color: var(--orange);
     /* max-width: 1000px; */
     margin: 0 auto;
 }
@@ -49,19 +49,19 @@ header img {
 }
 
 nav {
-    background-color: var(--green);
-    padding: 10px;
+    background-color: var(--pink);
+    padding: .5em;
 }
 
 nav a {
-    color: var(--light-green);
+    color: var(--green);
     text-decoration: none;
 }
 
 nav a:hover {
     background-color: var(--light-green);
     color: var(--green);
-    border-bottom: 3px solid var(--pink);
+    border-bottom: 3px solid var(--orange);
     /* box-shadow: 5px 5px var(--pink); */
 }
 
@@ -69,7 +69,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: space-around;
-    color:hsl(59, 55%, 30%);
+    color: var(--light-green);
     list-style-type: none;
 }
 
@@ -78,11 +78,18 @@ nav a {
     text-transform: uppercase;
 }
 
-main li {
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: var(--light-green);
+}
+
+#timeline li {
     list-style-type: none;
 }
 
-main li {
+#timeline li {
     margin-bottom: 20px;
 }
 
@@ -90,7 +97,6 @@ details {
     border: 1px solid #aaa;
     border-radius: 4px;
     padding: .5em .5em 0;
-    width: 30%;
     cursor: pointer;
 }
 
@@ -113,27 +119,8 @@ summary {
     padding: .5em;
 }
 
-main li::before {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-
-main li:nth-child(1)::before {
-    content: 'unknown';
-}
-
-main li:nth-child(2)::before {
-    content: '2013\2013 2017';
-}
-
-main li:nth-child(3)::before {
-    content: '2018\2013 2021';
-}
-
-main li:nth-child(4)::before {
-    content: '2021\2013 2022';
-}
-
-main li:nth-child(5)::before {
-    content: '2022';
+time {
+    padding: .5em;
+    background-color: var(--orange);
+    margin-right: .5em;
 }
