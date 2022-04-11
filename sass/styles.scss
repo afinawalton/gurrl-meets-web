@@ -1,0 +1,186 @@
+@import './variables';
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;700&display=swap'); */
+
+@mixin reset-list {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin my-name() {
+    text-transform: lowercase;
+}
+
+* { @include reset-list(); }
+
+::selection {
+    background-color: $orange;
+    color: $light-green;
+    opacity: 50%;
+}
+
+body {
+    font-family: 'Familjen Grotesk', sans-serif;
+    background-color: $orange;
+    margin: 0 auto;
+    color: $text;
+
+    & > * {
+        padding: 0 100px;
+    }
+}
+
+h1 {
+    @include my-name();
+    font-size: 2.5rem;
+    text-transform: lowercase;
+    line-height: 2rem;
+    @include reset-list()
+}
+
+.logo {
+    @include my-name();
+    background-color: $light-green;
+    color: $green;
+    border-bottom: 5px solid $pink;
+    /* box-shadow: 5px 5px $pink; */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    // font-weight: bold;
+}
+
+#hey {
+    background-color: $pink;
+    max-width: 200px;
+    max-height: 200px;
+    padding: 15px;
+}
+
+.jobTitle {
+    text-transform: lowercase;
+    line-height: .9em;
+    margin-top: 20px;
+}
+
+header {
+    /* background-color: $pink; */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    grid-template-rows: auto auto;
+
+    img {
+        max-width: 200px;
+        border-radius: 100%;
+        border: 3px solid $green;
+    }
+}
+
+#today {
+    text-align: center;
+    background-color: $green;
+    padding: 15px;
+    color: $light-green;
+}
+
+nav {
+    // background-color: $pink;
+    padding: .5em;
+    max-width: 960px;
+    margin: 0 auto;
+    text-transform: lowercase;
+
+    a {
+        color: $light-green;
+        text-decoration: none;
+        padding: .5em 1.5em;
+        // text-transform: uppercase;
+        font-size: 1.5em;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        &:hover {
+            background-color: $light-green;
+            color: $green;
+            border-bottom: 5px solid $pink;
+            /* box-shadow: 5px 5px $pink; */
+            
+        }
+    }
+
+    ul {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        color: $light-green;
+        list-style-type: none;
+    }
+}
+
+[aria-current="page"] {
+    border-bottom: 5px solid $pink;
+}
+
+main {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 50px;
+    background-color: $light-green;
+    border-radius: 20px;
+}
+
+#timeline li {
+    list-style-type: circle;
+    margin-bottom: 20px;
+}
+
+time {
+    padding: .5em;
+    background-color: $orange;
+    margin-right: .5em;
+
+    & + a {
+        color: $green;
+        font-weight: bold;
+        text-decoration: none;
+        border-bottom: 1px solid $green;
+    }
+}
+
+.unfreeze::before {
+    content: '01. ';
+}
+
+.inspoBoard::before {
+    content: '02. ';
+}
+
+.ticTacToe::before {
+    content: '03. ';
+}
+
+.weather::before {
+    content: '04. ';
+}
+
+.videoStore::before {
+    content: '05. ';
+}
+
+footer {
+    display: flex;
+    width: 600px;
+    margin: 0 auto;
+}
+
+footer ul {
+    display: flex;
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+footer li {
+    padding-right: 15px;
+}
